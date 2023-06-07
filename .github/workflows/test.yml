@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - dev
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: text-adi/cache-uses-actio@dev
+        env:
+          IMAGE: textadi/build-language-i18n-action@v2

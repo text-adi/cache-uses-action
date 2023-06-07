@@ -1,0 +1,9 @@
+name: "Caching uses in github action"
+description: "Cache uses during github action execution to speed up github action execution"
+author: text-adi
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: package
+  color: blue
