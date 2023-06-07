@@ -7,4 +7,4 @@ if [ ! -v IMAGE ]; then
   exit 1
 fi
 
-docker run "${IMAGE}"
+docker run ${IMAGE}
