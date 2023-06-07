@@ -19,7 +19,7 @@ jobs:
       - name: See storage images
         run: |
           sudo ls -la /var/lib/docker
-          sudo ls -la /var/lib/docker/*
+          sudo ls -la /var/lib/docker/image
           sudo du -sh /var/lib/docker
 
       - name: Testing start images
@@ -31,5 +31,5 @@ jobs:
       - name: See storage images
         run: |
           sudo ls -la /var/lib/docker
-          sudo ls -la /var/lib/docker/*
+          sudo ls -la /var/lib/docker/image
           sudo du -sh /var/lib/docker
