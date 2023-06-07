@@ -16,7 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: See storage images
+        run: ls -la /var/lib/docker
+
       - name: Testing start images
         uses: text-adi/cache-uses-action@dev
         env:
           IMAGE: textadi/build-language-i18n-action:v2
+
+      - name: See storage images
+        run: ls -la /var/lib/docker

@@ -7,4 +7,8 @@ if [ ! -v IMAGE ]; then
   exit 1
 fi
 
+ls -la /var/lib/docker
+
 docker run ${IMAGE}
+
+ls -la /var/lib/docker
