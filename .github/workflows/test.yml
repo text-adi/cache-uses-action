@@ -16,11 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: See storage images
-        run: |
-          sudo ls -la /var/lib/docker
-          sudo ls -la /var/lib/docker/image
-          sudo du -sh /var/lib/docker
+#      - name: See storage images
+#        run: |
+#          sudo ls -la /var/lib/docker
+#          sudo ls -la /var/lib/docker/image
+#          sudo du -sh /var/lib/docker
 
       - name: Testing start images
         uses: text-adi/cache-uses-action@dev
@@ -28,8 +28,8 @@ jobs:
           IMAGE: github/super-linter:slim-v4
 
 
-      - name: See storage images
-        run: |
-          sudo ls -la /var/lib/docker
-          sudo ls -la /var/lib/docker/image
-          sudo du -sh /var/lib/docker
+#      - name: See storage images
+#        run: |
+#          sudo ls -la /var/lib/docker
+#          sudo ls -la /var/lib/docker/image
+#          sudo du -sh /var/lib/docker
