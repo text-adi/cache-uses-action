@@ -2,7 +2,7 @@
 
 set -e
 
-if [ -z "$IMAGE" ]; then
+if [ ! -v DIR ]; then
   echo "IMAGE is not set. Quitting."
   exit 1
 fi
