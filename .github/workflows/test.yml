@@ -19,4 +19,4 @@ jobs:
       - name: Testing start images
         uses: text-adi/cache-uses-action@dev
         env:
-          IMAGE: textadi/build-language-i18n-action@v2
+          IMAGE: textadi/build-language-i18n-action:v2
