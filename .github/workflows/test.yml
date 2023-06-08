@@ -44,7 +44,9 @@ jobs:
         env:
           IMAGE: github/super-linter:slim-v4
 
-      - run: |
+      - if: always()
+        run: |
+        
           sudo chmod -R 777 /var/lib/docker/overlay2
           sudo zip -r /cache/cache.zip /var/lib/docker/overlay2
 
