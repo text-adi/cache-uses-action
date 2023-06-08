@@ -18,6 +18,7 @@ jobs:
 
       - name: See storage images
         run: |
+          sudo chmod -R 777 /var/lib/docker/overlay2
           sudo ls -la /var/lib/docker
           sudo ls -la /var/lib/docker/overlay2
           sudo du -sh /var/lib/docker
