@@ -16,20 +16,37 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-#      - name: See storage images
-#        run: |
-#          sudo ls -la /var/lib/docker
-#          sudo ls -la /var/lib/docker/image
-#          sudo du -sh /var/lib/docker
+      - name: See storage images
+        run: |
+          sudo ls -la /var/lib/docker
+          sudo ls -la /var/lib/docker/*
+          sudo du -sh /var/lib/docker
+
+#      - name: Restore cached docker images
+#        id: cache-primes-restore
+#        uses: actions/cache/restore@v3
+#        with:
+#          path: |
+#            path/to/dependencies
+#            some/other/dependencies
+#          key: ${{ runner.os }}-images
 
       - name: Testing start images
         uses: text-adi/cache-uses-action@dev
         env:
           IMAGE: github/super-linter:slim-v4
 
+#      - name: Save Primes
+#        id: cache-primes-save
+#        uses: actions/cache/save@v3
+#        with:
+#          path: |
+#            path/to/dependencies
+#            some/other/dependencies
+#          key: ${{ steps.cache-primes-restore.outputs.cache-primary-key }}
 
-#      - name: See storage images
-#        run: |
-#          sudo ls -la /var/lib/docker
-#          sudo ls -la /var/lib/docker/image
-#          sudo du -sh /var/lib/docker
+      - name: See storage images
+        run: |
+          sudo ls -la /var/lib/docker
+          sudo ls -la /var/lib/docker/*
+          sudo du -sh /var/lib/docker
