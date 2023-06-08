@@ -23,14 +23,18 @@ jobs:
           sudo ls -la /var/lib/docker/overlay2
           sudo du -sh /var/lib/docker
           sudo du -sh /var/lib/docker/overlay2
+          sudo mkdir -p /cache
 
       - name: Restore cached docker images
         id: cache-primes-restore
         uses: actions/cache/restore@v3
         with:
           path: |
-            /var/lib/docker/overlay2
+            /cache
           key: ${{ runner.os }}-images
+
+      - run: |
+          unzip /cache/cache.zip -d  /var/lib/docker/
 
       - name: Testing start images
         uses: text-adi/cache-uses-action@dev
@@ -39,6 +43,7 @@ jobs:
 
       - run: |
           sudo chmod -R 777 /var/lib/docker/overlay2
+          sudo zip -r /cache/cache.zip /var/lib/docker/overlay2
 
       - name: Save Primes
         id: cache-primes-save
@@ -46,7 +51,7 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
-            /var/lib/docker/overlay2
+            /cache
           key: ${{ steps.cache-primes-restore.outputs.cache-primary-key }}
 
       - name: See storage images
