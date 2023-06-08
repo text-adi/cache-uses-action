@@ -34,7 +34,7 @@ jobs:
           key: ${{ runner.os }}-images
 
       - run: |
-          if [ -f /etc/hosts ];
+          if [ -f /cache/cache.zip ];
           then
             unzip /cache/cache.zip -d  /var/lib/docker/
           fi 
