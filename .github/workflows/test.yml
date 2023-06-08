@@ -20,6 +20,7 @@ jobs:
         run: |
           sudo ls -la /var/lib/docker
           sudo ls -la /var/lib/docker/image
+          sudo ls -la /var/lib/docker/image/overlay2
           sudo du -sh /var/lib/docker
 
 #      - name: Restore cached docker images
@@ -49,4 +50,5 @@ jobs:
         run: |
           sudo ls -la /var/lib/docker
           sudo ls -la /var/lib/docker/image
+          sudo ls -la /var/lib/docker/image/overlay2
           sudo du -sh /var/lib/docker
