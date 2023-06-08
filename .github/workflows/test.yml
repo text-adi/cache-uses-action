@@ -19,7 +19,7 @@ jobs:
       - name: See storage images
         run: |
           sudo ls -la /var/lib/docker
-          sudo ls -la /var/lib/docker/*
+          sudo ls -la /var/lib/docker/images
           sudo du -sh /var/lib/docker
 
 #      - name: Restore cached docker images
@@ -48,5 +48,5 @@ jobs:
       - name: See storage images
         run: |
           sudo ls -la /var/lib/docker
-          sudo ls -la /var/lib/docker/*
+          sudo ls -la /var/lib/docker/images
           sudo du -sh /var/lib/docker
