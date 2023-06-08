@@ -38,6 +38,7 @@ jobs:
 
       - name: Save Primes
         id: cache-primes-save
+        if: always()
         uses: actions/cache/save@v3
         with:
           path: |
