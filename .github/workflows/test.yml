@@ -34,7 +34,10 @@ jobs:
           key: ${{ runner.os }}-images
 
       - run: |
-          unzip /cache/cache.zip -d  /var/lib/docker/
+          if [ -f /etc/hosts ];
+          then
+            unzip /cache/cache.zip -d  /var/lib/docker/
+          fi 
 
       - name: Testing start images
         uses: text-adi/cache-uses-action@dev
